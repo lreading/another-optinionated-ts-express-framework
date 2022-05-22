@@ -1,6 +1,6 @@
 {
   "name": "@lreading/another-ts-express-framework",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Just another opinionated ts/express framework",
   "main": "dist/index.js",
   "scripts": {

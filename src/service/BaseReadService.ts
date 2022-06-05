@@ -5,8 +5,7 @@ import { dbManager } from '../repo';
 import { IEntity, PagedResult } from '../entity';
 
 export interface IReadService<T extends IEntity<K>, K> {
-    exists(id: K): Promise<boolean>;
-    get(): Promise<T[]>;
+    getAll(): Promise<T[]>;
     getCount(): Promise<number>;
     getPage(pageNum: number, findOptions?: FindManyOptions<T>): Promise<PagedResult>;
     getById(id: K): Promise<T>;
@@ -30,7 +29,7 @@ export abstract class BaseReadService<T extends IEntity<K>,K> implements IReadSe
         return this._repo;
     }
 
-    async get(): Promise<T[]> {
+    async getAll(): Promise<T[]> {
         return await this.repo.find();
     }
 
@@ -56,8 +55,7 @@ export abstract class BaseReadService<T extends IEntity<K>,K> implements IReadSe
         return entity || null;
     }
 
-    async exists(id: K): Promise<boolean> {
-        const count = await this.repo.count({ where: { id }});
-        return count > 0;
+    async query(options?: FindManyOptions<T>): Promise<T[]> {
+        return await this.repo.find(options);
     }
 }

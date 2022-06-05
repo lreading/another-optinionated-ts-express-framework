@@ -5,6 +5,7 @@ import { HTTP_STATUS } from '../response/HttpStatus';
 export interface IApiResponse {
     get status(): HTTP_STATUS;
     get body(): any;
+	toResponse(res: Response): Response | void;
 }
 
 export abstract class BaseApiResponse implements IApiResponse {

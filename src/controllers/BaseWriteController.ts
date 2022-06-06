@@ -1,7 +1,7 @@
 import { ClassConstructor, plainToInstance } from 'class-transformer';
 
+import { Audit } from '../decorators';
 import {
-	Audit,
 	BadRequestError,
 	IAuthedRequest,
 	IEntity,

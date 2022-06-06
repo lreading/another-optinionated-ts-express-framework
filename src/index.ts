@@ -6,4 +6,5 @@ export * from './errors';
 export * from './middleware';
 export * from './repo';
 export * from './response';
+export * from './secrets';
 export * from './service';

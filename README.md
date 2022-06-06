@@ -7,6 +7,7 @@ Just another opinionated TypeScript / Express Framework
 - Document Entity structure
 - Document Services
 - Document Controllers
+- Document Secrets
 
 ```typescript
 import { getLogger } from '@lreading/typescript-winston-logger';

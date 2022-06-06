@@ -1,6 +1,13 @@
 # another-optinionated-ts-express-framework
 Just another opinionated TypeScript / Express Framework
 
+## TODO:
+- Document overall usage better
+- Document expanding classes
+- Document Entity structure
+- Document Services
+- Document Controllers
+
 ```typescript
 import { getLogger } from '@lreading/typescript-winston-logger';
 import express, { Express } from 'express';

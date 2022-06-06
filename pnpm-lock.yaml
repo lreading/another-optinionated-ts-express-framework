@@ -8,11 +8,15 @@ specifiers:
   '@types/express': ^4.17.13
   '@types/jsonwebtoken': ^8.5.8
   '@types/node': ^17.0.31
+  '@types/validator': ^13.7.3
   '@typescript-eslint/eslint-plugin': ^5.22.0
   '@typescript-eslint/parser': ^5.22.0
+  class-transformer: ^0.5.1
+  class-validator: ^0.13.2
   eslint: ^8.15.0
   express: ^4.18.1
   jsonwebtoken: ^8.5.1
+  libphonenumber-js: ^1.10.6
   logform: ^2.4.0
   nodemon: ^2.0.16
   npm-run-all: ^4.1.5
@@ -20,16 +24,21 @@ specifiers:
   ts-node: ^10.7.0
   typeorm: ^0.3.6
   typescript: ^4.6.4
+  validator: ^13.7.0
   winston: ^3.7.2
   winston-transport: ^4.5.0
 
 dependencies:
   '@lreading/typescript-winston-logger': 1.0.4
+  class-transformer: 0.5.1
+  class-validator: 0.13.2
   express: 4.18.1
   jsonwebtoken: 8.5.1
+  libphonenumber-js: 1.10.6
   logform: 2.4.0
   reflect-metadata: 0.1.13
   typeorm: 0.3.6_ts-node@10.7.0
+  validator: 13.7.0
   winston-transport: 4.5.0
 
 devDependencies:
@@ -39,6 +48,7 @@ devDependencies:
   '@types/express': 4.17.13
   '@types/jsonwebtoken': 8.5.8
   '@types/node': 17.0.31
+  '@types/validator': 13.7.3
   '@typescript-eslint/eslint-plugin': 5.22.0_tal4xlmvnofklupd3hwjtzfb4q
   '@typescript-eslint/parser': 5.22.0_hcfsmds2fshutdssjqluwm76uu
   eslint: 8.15.0
@@ -1428,6 +1438,10 @@ packages:
       '@types/node': 17.0.31
     dev: true
 
+  /@types/validator/13.7.3:
+    resolution: {integrity: sha512-DNviAE5OUcZ5s+XEQHRhERLg8fOp8gSgvyJ4aaFASx5wwaObm+PBwTIMXiOFm1QrSee5oYwEAYb7LMzX2O88gA==}
+    dev: true
+
   /@typescript-eslint/eslint-plugin/5.22.0_tal4xlmvnofklupd3hwjtzfb4q:
     resolution: {integrity: sha512-YCiy5PUzpAeOPGQ7VSGDEY2NeYUV1B0swde2e0HzokRsHBYjSdF6DZ51OuRZxVPHx0032lXGLvOMls91D8FXlg==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
@@ -1846,6 +1860,17 @@ packages:
   /ci-info/2.0.0:
     resolution: {integrity: sha512-5tK7EtrZ0N+OLFMthtqOj4fI2Jeb88C4CAZPu25LDVUgXJ0A3Js4PMGqrn0JU1W0Mh1/Z8wZzYPxqUrXeBboCQ==}
     dev: true
+
+  /class-transformer/0.5.1:
+    resolution: {integrity: sha512-SQa1Ws6hUbfC98vKGxZH3KFY0Y1lm5Zm0SY8XX9zbK7FJCyVEac3ATW0RIpwzW+oOfmHE5PMPufDG9hCfoEOMw==}
+    dev: false
+
+  /class-validator/0.13.2:
+    resolution: {integrity: sha512-yBUcQy07FPlGzUjoLuUfIOXzgynnQPPruyK1Ge2B74k9ROwnle1E+NxLWnUv5OLU8hA/qL5leAE9XnXq3byaBw==}
+    dependencies:
+      libphonenumber-js: 1.10.6
+      validator: 13.7.0
+    dev: false
 
   /cli-boxes/2.2.1:
     resolution: {integrity: sha512-y4coMcylgSCdVinjiDBuR8PCC2bLjyGTwEmPb9NHR/QaNU6EUOXcTY/s6VjGMD6ENSEaeQYHCY0GNGS5jfMwPw==}
@@ -2987,6 +3012,10 @@ packages:
       prelude-ls: 1.2.1
       type-check: 0.4.0
     dev: true
+
+  /libphonenumber-js/1.10.6:
+    resolution: {integrity: sha512-CIjT100/SmntsUjsLVs2t3ufeN4KdNXUxhD07tH153pdbaCWuAjv0jK/gPuywR3IImB/U/MQM+x9RfhMs5XZiA==}
+    dev: false
 
   /load-json-file/4.0.0:
     resolution: {integrity: sha1-L19Fq5HjMhYjT9U62rZo607AmTs=}
@@ -4177,6 +4206,11 @@ packages:
       spdx-correct: 3.1.1
       spdx-expression-parse: 3.0.1
     dev: true
+
+  /validator/13.7.0:
+    resolution: {integrity: sha512-nYXQLCBkpJ8X6ltALua9dRrZDHVYxjJ1wgskNt1lH9fzGjs3tgojGSCBjmEPwkWS1y29+DrizMTW19Pr9uB2nw==}
+    engines: {node: '>= 0.10'}
+    dev: false
 
   /vary/1.1.2:
     resolution: {integrity: sha1-IpnwLG3tMNSllhsLn3RSShj2NPw=}

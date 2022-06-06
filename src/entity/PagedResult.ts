@@ -1,5 +1,3 @@
-import { IEntity } from './IEntity';
-
 export interface IPagedResult {
     results: unknown[];
     currentPage: number;
@@ -7,7 +5,7 @@ export interface IPagedResult {
 }
 
 export class PagedResult implements IPagedResult {
-    results: unknown[];
-    currentPage: number;
-    totalPages: number;
+	results: unknown[];
+	currentPage: number;
+	totalPages: number;
 }

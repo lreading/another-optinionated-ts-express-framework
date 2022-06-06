@@ -4,7 +4,7 @@ import { getLogger, TSLogger } from '@lreading/typescript-winston-logger';
 import { SecretType } from './SecretType';
 
 export interface ISecret {
-    load(type: SecretType): Promise<unknown>;
+    load<T>(type: SecretType): Promise<T>;
 }
 
 
@@ -50,7 +50,7 @@ export class Secret implements ISecret {
 		return val.toString('utf8');
 	}
     
-	async load(type: SecretType): Promise<unknown> {
+	async load<T>(type: SecretType): Promise<T> {
 		this.logger.debug(`Loading secret ${this.name}`);
 
 		let strVal = this.fromDockerSecret();
@@ -59,7 +59,7 @@ export class Secret implements ISecret {
 		}
     
 		if (strVal !== null) {
-			return this.toType(type, strVal);
+			return this.toType(type, strVal) as unknown as T;
 		}
     
 		const secret = this.defaultVal || null;
@@ -68,6 +68,6 @@ export class Secret implements ISecret {
 			throw new TypeError(`${this.name} is a required property but none was found`);
 		}
     
-		return secret;
+		return secret as unknown as T;
 	}
 }

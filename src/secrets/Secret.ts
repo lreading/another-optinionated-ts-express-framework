@@ -3,12 +3,12 @@ import { getLogger, TSLogger } from '@lreading/typescript-winston-logger';
 
 import { SecretType } from './SecretType';
 
-export interface ISecret {
-    load<T>(type: SecretType): Promise<T>;
+export interface ISecret<T> {
+    load(type: SecretType): Promise<T>;
 }
 
 
-export class Secret implements ISecret {
+export class Secret<T> implements ISecret<T> {
 	private readonly name: string;
 	private readonly defaultVal: unknown = null;
 	private readonly required: boolean;
@@ -50,7 +50,7 @@ export class Secret implements ISecret {
 		return val.toString('utf8');
 	}
     
-	async load<T>(type: SecretType): Promise<T> {
+	async load(type: SecretType): Promise<T> {
 		this.logger.debug(`Loading secret ${this.name}`);
 
 		let strVal = this.fromDockerSecret();

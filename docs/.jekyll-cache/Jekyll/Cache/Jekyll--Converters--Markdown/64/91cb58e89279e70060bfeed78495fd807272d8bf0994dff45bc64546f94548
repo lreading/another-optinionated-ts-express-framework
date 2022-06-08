@@ -1,0 +1,54 @@
+I"h
+<h2 id="rest-controllers">REST Controllers</h2>
+
+<h3 id="tldr">TLDR;</h3>
+
+<ol>
+  <li>Create your controller</li>
+  <li>Register your controller</li>
+</ol>
+
+<p>Example:</p>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Controller</span><span class="p">,</span> <span class="nx">Get</span><span class="p">,</span> <span class="nx">Post</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@lreading/another-ts-express-framework</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="p">@</span><span class="nd">Controller</span><span class="p">(</span><span class="dl">'</span><span class="s1">/api/v1/foo</span><span class="dl">'</span><span class="p">)</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">FooController</span> <span class="p">{</span>
+
+    <span class="c1">// GET http://myawesomesite.com/api/v1/foo</span>
+    <span class="c1">//</span>
+    <span class="c1">// RES: { status: 200, data: 'foo'}</span>
+    <span class="p">@</span><span class="nd">Get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">)</span>
+    <span class="kd">get</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="dl">'</span><span class="s1">foo</span><span class="dl">'</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<h3 id="creating-rest-endpoints">Creating REST Endpoints</h3>
+<p>Rest controllers are easily added using the following <em>class</em> decorators:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">@Controller('/route/to/resource')</code></li>
+</ul>
+
+<p>The classes can implement different HTTP verbs:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">@Get('/')</code></li>
+  <li><code class="language-plaintext highlighter-rouge">@Post('/extra/path/data')</code></li>
+  <li><code class="language-plaintext highlighter-rouge">@Put('/can/also/use/:params')</code></li>
+  <li><code class="language-plaintext highlighter-rouge">@Delete('/')</code></li>
+</ul>
+
+<h3 id="todo">TODO</h3>
+<ul>
+  <li>Document all decorators (include url params)</li>
+  <li>Document base implementations and how to extend them</li>
+  <li>Document responses / types</li>
+  <li>Document catchall handler</li>
+  <li>Document 404 handler</li>
+  <li>Document services</li>
+  <li>Document entities</li>
+</ul>
+
+<p><a href="./">back</a></p>
+:ET

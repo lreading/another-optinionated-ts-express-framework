@@ -4,6 +4,9 @@
 <loc>http://localhost:4000/another-page.html</loc>
 </url>
 <url>
+<loc>http://localhost:4000/controllers.html</loc>
+</url>
+<url>
 <loc>http://localhost:4000/</loc>
 </url>
 </urlset>

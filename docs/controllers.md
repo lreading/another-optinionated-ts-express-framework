@@ -47,5 +47,8 @@ The classes can implement different HTTP verbs:
 - Document 404 handler
 - Document services
 - Document entities
+- Fix relative URLs
+- Document Middleware (specifically auth)
+- Document logging
 
 [back](./)
